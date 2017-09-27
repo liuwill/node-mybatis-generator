@@ -1,0 +1,14 @@
+{
+  "mapper": {
+    "package": "com.liuwill.demo.generator",
+    "type": "java"
+  },
+  "sqlMapper": {
+    "package": "mapper",
+    "type": "resources"
+  },
+  "modal": {
+    "package": "com.liuwill.demo.generator",
+    "type": "java"
+  }
+}

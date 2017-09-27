@@ -4,7 +4,7 @@
   "description": "generate mybatis mapper and modal by node.js",
   "main": "index.js",
   "bin": {
-    "generator": "generator"
+    "generator": "index"
   },
   "scripts": {
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --opts test/mocha.opts",
