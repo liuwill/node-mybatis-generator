@@ -1,0 +1,8 @@
+{{ languages }}，
+{% if languages | length >= 5 %}
+    powerful
+{% elif languages | length >= 2 %}
+    normal
+{% else %}
+    week
+{% endif %}
