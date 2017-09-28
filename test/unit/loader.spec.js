@@ -15,18 +15,18 @@ describe('#file loader', function () {
 
   describe('#load Json', function () {
     it('will throw error when file not exists', function () {
-      expect(function () { loader.loadJson(path.join(__filename, './' + randPath + '/path')) }).to.throw()
+      expect(function () { loader.loadJson(path.join(__filename, randPath + '_path')) }).to.throw()
       expect(function () { loader.loadJson(__dirname) }).to.throw()
       expect(function () { loader.loadJson(__filename) }).to.throw()
     })
 
     it('will load json content from file', function () {
       var jsonData = {
-        "host": "localhost",
-        "user": "root",
-        "password": "123456",
-        "database": "demo",
-        "port": 3306
+        'host': 'localhost',
+        'user': 'root',
+        'password': '123456',
+        'database': 'demo',
+        'port': 3306
       }
 
       var fileName = 'json_' + randPath
@@ -61,7 +61,13 @@ describe('#file loader', function () {
       loader.initTarget(filePath)
 
       assert.isTrue(fs.existsSync(filePath))
+      expect(function () { loader.initTarget(filePath) }).to.not.throw()
       fs.rmdirSync(filePath)
+    })
+
+    it('is same with loadJSON for load config', function () {
+      expect(loader.loadJson).to.be.equal(loader.loadDbConfig)
+      expect(loader.loadJson).to.be.equal(loader.loadMapperConfig)
     })
   })
 })

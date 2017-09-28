@@ -15,10 +15,10 @@ var Table = tableModule.Table
 describe('#table module', function () {
   describe('#Column class feature', function () {
     it('column created by factory', function () {
-      var simpleColData = { "Field": "id", "Type": "int(11) unsigned", "Null": "NO", "Key": "PRI", "Default": "NULL", "Extra": "auto_increment" }
+      var simpleColData = { 'Field': 'id', 'Type': 'int(11) unsigned', 'Null': 'NO', 'Key': 'PRI', 'Default': 'NULL', 'Extra': 'auto_increment' }
       var testCol = Column.factory(simpleColData['Field'], simpleColData['Type'])
 
-      expect(testCol).to.include({targetType: 'Integer', field: 'id'})
+      expect(testCol).to.include({ targetType: 'Integer', field: 'id' })
     })
   })
 
@@ -27,13 +27,16 @@ describe('#table module', function () {
       var targetTable = Table.factory('sample', sampleTable.TABLE_ROWS)
 
       expect(targetTable.fields).to.have.lengthOf(sampleTable.TABLE_ROWS.length)
-      for(var i in sampleTable.TABLE_ROWS){
+      for (var i in sampleTable.TABLE_ROWS) {
         var rowData = sampleTable.TABLE_ROWS[i]
         assert.isNotNull(targetTable[rowData.Field])
 
         var tableCol = targetTable[rowData.Field]
         assert.isNotNull(tableModule.GENERATOR_RULE[tableCol.targetType])
       }
+
+      targetTable.id = 'wrong'
+      expect(targetTable.data['id']).to.be.equal('wrong')
     })
   })
 })

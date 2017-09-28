@@ -1,7 +1,7 @@
 'use strict'
 
 var chai = require('chai')
-var nunjucks = require("nunjucks")
+var nunjucks = require('nunjucks')
 
 chai.should()
 var expect = chai.expect

@@ -8,8 +8,12 @@
     node: true
   rules:
     #no-param-reassign: 0
-    #semi: [2 never]
-    indent: [error, 2]
+    semi: [error, never]                  # 不加分号
+    indent: [error, 2]                    # 缩进两个空格
+    linebreak-style: [error, unix]        # unix换行符
+    quotes: [error, single]               # 强制使用单引号
+    comma-spacing: [error, { "before": false, "after": true }]  # 逗号后必须有空格
+    comma-style: ["error", "last"]        # 逗号位于行尾
 
     #官方文档 http:#eslint.org/docs/rules/
     # quotes: [0 single]                  #建议使用单引号
@@ -41,6 +45,7 @@
     no-unreachable: 2                      #不可能执行到的代码
     no-unexpected-multiline: 2             #行尾缺少分号可能导致一些意外情况
     no-sparse-arrays: 2                    #数组中多出逗号
+    no-shadow: error
     no-shadow-restricted-names: 2          #关键词与命名冲突
     no-undef: 2                            #变量未定义
     no-unused-vars: 1                      #变量定义后未使用
@@ -51,7 +56,7 @@
     no-else-return: 1                      #在else代码块中return，else是多余的
     no-multi-spaces: 1                     #不允许多个空格
     key-spacing:
-      - 1
+      - error
       -
         beforeColon: false
         afterColon: true                    #object直接量建议写法 : 后一个空格前面不留空格
