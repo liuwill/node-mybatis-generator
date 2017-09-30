@@ -1867,6 +1867,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
+simple-camelcase@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/simple-camelcase/-/simple-camelcase-0.1.1.tgz#0f264435d60284ac93f1440ab97b4b600681e34f"
+
 sinon@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/sinon/-/sinon-4.0.0.tgz#a54a5f0237aa1dd2215e5e81c89b42b50c4fdb6b"

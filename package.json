@@ -1,6 +1,6 @@
 {
   "name": "mybatis-generator-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "generate mybatis mapper and modal by node.js",
   "main": "index.js",
   "bin": {
@@ -30,6 +30,7 @@
     "mysql": "^2.14.1",
     "nunjucks": "^3.0.1",
     "rimraf": "^2.6.2",
+    "simple-camelcase": "^0.1.1",
     "yargs": "^9.0.1"
   }
 }
