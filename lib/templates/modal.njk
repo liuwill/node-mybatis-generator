@@ -1,0 +1,21 @@
+package {{ modalPackage }};
+
+{% for item in packages %}
+import {{ item }};
+{% endfor %}
+
+public class {{ baseClassName }}VO {
+{% for item in columns %}
+    private {{ item.targetType }} {{ item.lowerCamelField }};
+{% endfor %}
+
+{% for item in columns %}
+    public {{ item.targetType }} get{{ item.upperCamelField }}() {
+        return {{ item.lowerCamelField }};
+    }
+
+    public void set{{ item.upperCamelField }}({{ item.targetType }} {{ item.lowerCamelField }}) {
+        this.{{ item.lowerCamelField }} = {{ item.lowerCamelField }};
+    }
+{% endfor %}
+}
