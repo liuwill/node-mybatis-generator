@@ -9,7 +9,7 @@ var expect = chai.expect
 describe('#nunjucks features', function() {
   it('is template works', function() {
     var languages = ['Java', 'javascript', 'Python']
-    var nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader('examples'))
+    var nunjucksEnv = new nunjucks.Environment(new nunjucks.FileSystemLoader('test/sample'))
     var result = nunjucksEnv.render('template.njk', { languages: languages })
     expect(result).to.include(languages[0])
   })
