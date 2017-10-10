@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="{{ mapperPackage }}.{{ baseClassName }}Mapper">
+
+    <sql id="{{ baseParamName }}Columns">
+        {% for item in columns -%}
+           a.{{ item.field }} AS {{ item.lowerCamelField }}{{ ',' if not loop.last }}
+        {% endfor %}
+    </sql>
+
+    <select id="findOne" resultType="{{ baseClassName }}PO">
+        SELECT
+            <include refid="{{ baseParamName }}Columns"/>
+        FROM {{ tableName }} a
+        WHERE a.id = #{id}
+    </select>
+
+    <select id="findPage" resultType="{{ baseClassName }}PO">
+        SELECT
+            <include refid="{{ baseParamName }}Columns"/>
+        FROM {{ tableName }} a
+        <where>
+
+        </where>
+        <choose>
+            <when test="page !=null and page.orderBy != null and page.orderBy != ''">
+                ORDER BY ${page.orderBy}
+            </when>
+            <otherwise>
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="count" resultType="{{ baseClassName }}PO">
+        SELECT
+            count(1) AS count
+        FROM {{ tableName }} a
+        <where>
+
+        </where>
+        <choose>
+        </choose>
+    </select>
+
+    <select id="findAll" resultType="{{ baseClassName }}PO">
+        SELECT
+            <include refid="{{ baseParamName }}Columns"/>
+        FROM {{ tableName }} a
+        <where>
+
+        </where>
+        <choose>
+            <when test="page !=null and page.orderBy != null and page.orderBy != ''">
+                ORDER BY ${page.orderBy}
+            </when>
+            <otherwise>
+            </otherwise>
+        </choose>
+    </select>
+
+    <insert id="insert">
+        INSERT INTO {{ tableName }}(
+            {% for item in columns -%}
+            #{{ item.field }}{{ ',' if not loop.last }}
+            {% endfor %}
+        ) VALUES (
+            {% for item in columns -%}
+            #{{ '{' + item.lowerCamelField + '}' }}{{ ',' if not loop.last }}
+            {% endfor %}
+        )
+    </insert>
+
+    <update id="update">
+        UPDATE {{ tableName }} SET
+            {% for item in columns -%}
+            {{ item.field }} = #{{ '{' + item.lowerCamelField + '}' }}{{ ',' if not loop.last }}
+            {% endfor %}
+        WHERE id = #{id}
+    </update>
+
+    <update id="delete">
+        DELETE FROM {{ tableName }}
+        WHERE id = #{id}
+    </update>
+
+</mapper>

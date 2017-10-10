@@ -3,8 +3,8 @@
     "package": "com.liuwill.demo.generator.mapper",
     "type": "java"
   },
-  "sqlMapper": {
-    "package": "mapper",
+  "xml": {
+    "package": "mappings",
     "type": "resources"
   },
   "modal": {

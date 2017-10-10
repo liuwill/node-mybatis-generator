@@ -8,7 +8,7 @@ var mysql = require('mysql')
 chai.should()
 var expect = chai.expect
 
-var Connection = require('../../lib/connect')
+var connectModal = require('../../lib/connect')
 
 describe('#connect module', function () {
   var mockCount = 0
@@ -36,7 +36,7 @@ describe('#connect module', function () {
 
   describe('#connect class feature', function () {
     it('will connect with mysql', function (done) {
-      var conn = new Connection({})
+      var conn = new connectModal.Connection({})
       expect(mockCount).to.be.at.least(1)
 
       conn.query('error').catch(function (error) {
@@ -46,7 +46,7 @@ describe('#connect module', function () {
     })
 
     it('will trigger query resolve', function (done) {
-      var conn = new Connection({})
+      var conn = connectModal.createConnection({})
       expect(mockCount).to.be.at.least(1)
 
       conn.query('desc').then(function (results) {

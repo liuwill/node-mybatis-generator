@@ -1,10 +1,10 @@
 {
-  "name": "mybatis-generator-cli",
-  "version": "0.1.1",
+  "name": "mybatis-generator",
+  "version": "0.2.0",
   "description": "generate mybatis mapper and modal by node.js",
   "main": "index.js",
   "bin": {
-    "mybatis-generator": "index"
+    "mybatis-generator": "bin.js"
   },
   "scripts": {
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --opts test/mocha.opts",

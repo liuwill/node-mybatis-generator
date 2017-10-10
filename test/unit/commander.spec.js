@@ -7,6 +7,7 @@ var yargs = require('yargs')
 
 chai.should()
 var expect = chai.expect
+var assert = chai.assert
 
 var MOCK_CONFIG = {
   output: 'output',

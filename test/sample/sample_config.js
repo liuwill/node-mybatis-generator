@@ -3,7 +3,7 @@ module.exports = {
     'package': 'com.liuwill.demo.generator.mapper',
     'type': 'java'
   },
-  'sqlMapper': {
+  'xml': {
     'package': 'mapper',
     'type': 'resources'
   },

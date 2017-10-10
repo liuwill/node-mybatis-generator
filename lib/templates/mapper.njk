@@ -1,0 +1,20 @@
+package {{ mapperPackage }};
+
+import java.util.List;
+import {{ modalPackage }}.{{ baseClassName }}PO;
+
+public interface {{ baseClassName }}Mapper {
+   int count({{ baseClassName }}PO {{ baseParamName }}PO);
+
+   {{ baseClassName }}PO findOne({{ baseClassName }}PO {{ baseParamName }}PO);
+
+   List<{{ baseClassName }}PO> findPage({{ baseClassName }}PO {{ baseParamName }}PO);
+
+   List<{{ baseClassName }}PO> findAll({{ baseClassName }}PO {{ baseParamName }}PO);
+
+   void insert({{ baseClassName }}PO {{ baseParamName }}PO);
+
+   void update({{ baseClassName }}PO {{ baseParamName }}PO);
+
+   void delete({{ baseClassName }}PO {{ baseParamName }}PO);
+}

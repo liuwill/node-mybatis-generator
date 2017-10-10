@@ -4,7 +4,7 @@ package {{ modalPackage }};
 import {{ item }};
 {% endfor %}
 
-public class {{ baseClassName }}VO {
+public class {{ baseClassName }}PO {
 {% for item in columns %}
     private {{ item.targetType }} {{ item.lowerCamelField }};
 {% endfor %}

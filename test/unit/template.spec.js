@@ -33,7 +33,7 @@ describe('#template module', function () {
   describe('#render templates', function () {
     it('will render proper template', function () {
       var modalContent = templateModule.render(tplObj, templateModule.RENDER_TYPES.modal)
-      expect(modalContent).to.have.string('public class ' + tplObj.baseClassName + 'VO')
+      expect(modalContent).to.have.string('public class ' + tplObj.baseClassName + 'PO')
 
       for(var i in tplObj.columns){
         var item = tplObj.columns[i]
