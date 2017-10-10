@@ -14,7 +14,6 @@ function generate(cmdConfig, endCallback) {
   var dbConfig = loader.loadDbConfig(cmdConfig.databasePath)
 
   var connHandle = conn.createConnection(dbConfig)
-
   connHandle.query('show tables in ' + dbConfig.database).then(function (tables) {
     var queryPromises = []
     for (var i in tables) {

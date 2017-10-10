@@ -3,6 +3,7 @@
     describe: true
     it: true
     before: true
+    beforeEach: true
   env:
     browser: true
     node: true

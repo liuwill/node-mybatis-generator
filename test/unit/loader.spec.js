@@ -64,10 +64,5 @@ describe('#file loader', function () {
       expect(function () { loader.initTarget(filePath) }).to.not.throw()
       fs.rmdirSync(filePath)
     })
-
-    it('is same with loadJSON for load config', function () {
-      expect(loader.loadJson).to.be.equal(loader.loadDbConfig)
-      expect(loader.loadJson).to.be.equal(loader.loadMapperConfig)
-    })
   })
 })
