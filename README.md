@@ -18,13 +18,12 @@ $ npm install --g mybatis-generator
 $ mybatis-generator -c examples/mapper.json -d examples/db.json
 ```
 
-
 ## License
 
   [MIT](./LICENSE)
 
-[npm-image]: https://img.shields.io/npm/v/node-mybatis-generator.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/node-mybatis-generator
+[npm-image]: https://img.shields.io/npm/v/mybatis-generator.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/mybatis-generator
 [travis-image]: https://img.shields.io/travis/liuwill/node-mybatis-generator/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/liuwill/node-mybatis-generator
 [quality-image]: https://img.shields.io/codeclimate/github/liuwill/node-mybatis-generator.svg?style=flat-square
