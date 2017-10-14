@@ -38,7 +38,10 @@ describe('#save generated file', function () {
       fs.mkdirSync(basePath)
       var writePath = generator.buildSavePath(basePath, jsonData.mapper.package, fileName)
 
-      expect(writePath).to.have.string(jsonData.mapper.package.replace(/\./g, '/'))
+      var packageList = jsonData.mapper.package.split('.')
+      for (var i in packageList) {
+        expect(writePath).to.have.string(packageList[i])
+      }
 
       generator.writerFile(basePath, jsonData.mapper.package, fileName, '')
       assert.isFalse(fs.existsSync(writePath))
