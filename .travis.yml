@@ -2,6 +2,8 @@ language: node_js
 node_js:
   - "5.10.0"
   - "7.6.0"
+env:
+  CODECLIMATE_REPO_TOKEN: eab1ca76713a9b486b302e96ff7b734bb209d6f465dcdecd7b6e3d0f6fe688c7
 install:
   - npm install
 script:
@@ -9,5 +11,5 @@ script:
 after_script:
   - npm install -g codecov
   - codecov
-  # - npm install -g codeclimate-test-reporter
-  # - codeclimate-test-reporter < ./coverage/lcov.info
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < ./coverage/lcov.info
