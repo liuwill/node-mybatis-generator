@@ -1,5 +1,6 @@
 # node-mybatis-generator
   [![Build Status][travis-image]][travis-url]
+  [![Build Status][appveyor-image]][appveyor-url]
   [![NPM version][npm-image]][npm-url]
   [![Code Climate][quality-image]][quality-url]
   [![Codecov branch][codecov-image]][codecov-url]
