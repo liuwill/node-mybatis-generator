@@ -1,9 +1,10 @@
 # node-mybatis-generator
   [![Build Status][travis-image]][travis-url]
-  [![Build Status][appveyor-image]][appveyor-url]
   [![NPM version][npm-image]][npm-url]
-  [![Code Climate][quality-image]][quality-url]
   [![Codecov branch][codecov-image]][codecov-url]
+
+  [![Build status](https://ci.appveyor.com/api/projects/status/c9s2acyo218wjq52?svg=true)](https://ci.appveyor.com/project/liuwill/node-mybatis-generator)
+  [![Maintainability](https://api.codeclimate.com/v1/badges/4dfc2e5a3e34ef0dc493/maintainability)](https://codeclimate.com/github/liuwill/node-mybatis-generator/maintainability)
 
 使用node.js实现的mybatis generator，生成mybatis mapper的JAVA代码。
 
