@@ -39,8 +39,8 @@ function generate(cmdConfig, endCallback) {
         }
       }
       endCallback(null)
-    }).catch(function () {
-      endCallback(new Error())
+    }).catch(function (err) {
+      endCallback(err)
     })
   })
 }
