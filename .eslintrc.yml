@@ -32,8 +32,8 @@
 
     #常见错误
     comma-dangle:
-      - 2
-      - never             #定义数组或对象最后多余的逗号
+      - 1
+      - only-multiline             #定义数组或对象最后多余的逗号
     no-debugger: 2                         #debugger 调试代码未删除
     no-constant-condition: 2               #常量作为条件
     no-dupe-args: 2                        #参数重复
