@@ -1,6 +1,6 @@
 {
   "name": "mybatis-generator",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "generate mybatis mapper and modal by node.js",
   "main": "index.js",
   "bin": {
