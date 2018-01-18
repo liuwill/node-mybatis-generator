@@ -3,3 +3,5 @@ node_modules
 .vscode
 npm-debug*.log
 target
+demo
+b2b

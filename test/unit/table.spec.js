@@ -16,7 +16,10 @@ describe('#table module', function () {
   describe('#Column class feature', function () {
     it('column created by factory', function () {
       var simpleColData = { 'Field': 'id', 'Type': 'int(11) unsigned', 'Null': 'NO', 'Key': 'PRI', 'Default': 'NULL', 'Extra': 'auto_increment' }
-      var testCol = Column.factory(simpleColData['Field'], simpleColData['Type'])
+      var testCol = Column.factory(simpleColData['Field'], {
+        type: simpleColData['Type'],
+        nullMark: true
+      })
 
       expect(testCol).to.include({ targetType: 'Integer', field: 'id' })
     })

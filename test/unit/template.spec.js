@@ -18,6 +18,14 @@ describe('#template module', function () {
   var targetTable = Table.factory(tableName, sampleTable.TABLE_ROWS)
   var tplObj = templateModule.buildTemplate(sampleMapperConfig, targetTable)
 
+  it('hidden some column because of frame', function () {
+    var hiddenTable = Table.factory(tableName, sampleTable.TABLE_ROWS)
+    hiddenTable.data['id'].hiddenMark = true
+    var hiddenObj = templateModule.buildTemplate(sampleMapperConfig, hiddenTable)
+
+    expect(hiddenObj.columns).to.have.lengthOf(targetTable.fields.length - 1)
+  })
+
   describe('#build Template class', function () {
     it('Template came from table', function () {
       expect(tableName).to.be.equal(tplObj.tableName)
@@ -35,7 +43,7 @@ describe('#template module', function () {
       var modalContent = templateModule.render(tplObj, templateModule.RENDER_TYPES.modal)
       expect(modalContent).to.have.string('public class ' + tplObj.baseClassName + 'PO')
 
-      for(var i in tplObj.columns){
+      for (var i in tplObj.columns) {
         var item = tplObj.columns[i]
         expect(modalContent).to.have.string('private ' + item.targetType + ' ' + item.lowerCamelField)
         expect(modalContent).to.have.string('void set' + item.upperCamelField)
